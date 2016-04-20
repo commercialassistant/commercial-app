@@ -26,14 +26,14 @@ git push origin HEAD:(rama)
 //obtener del server
 git pull remote rama
 
-//revertir cambios
-git checkout * //revertir cambios no commiteados
-//revertir cambios
-//elimina los cambios hechos desde tu ultimo commit
-//muestra lo que haria
-git clean -n
-//ejecuta la accion
-git clean -f
+<p>//revertir cambios</p>
+<p>git checkout * //revertir cambios no commiteados</p>
+<p>//revertir cambios</p>
+<p>//elimina los cambios hechos desde tu ultimo commit</p>
+<p>//muestra lo que haria</p>
+<p>git clean -n</p>
+<p>//ejecuta la accion</p>
+<p>git clean -f</p>
 
 //referencias git
 <a hrf="http://rogerdudler.github.io/git-guide/index.es.html">http://rogerdudler.github.io/git-guide/index.es.html</a>
