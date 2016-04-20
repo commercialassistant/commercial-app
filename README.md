@@ -5,17 +5,17 @@
 <a href="https://docs.angularjs.org/api">https://docs.angularjs.org/api</a>
 
 //GIT
-en caso de fallo en git al clonar u otras operaciones usar
-git config --system http.sslverify false
-//clonar proyecto
-git clone https://github.com/jesusricardodam/prueba.git
-//git basics
-git status //ver el estado
-modificamos cosas
-git add * //añadimos todo lo modificado a pendiente de commitear
-git commit -m "mensaje"  //commiteamos lo anteriormente añadido
-//volver atras
-git commit --amend //desacemos la operacion
+<p>en caso de fallo en git al clonar u otras operaciones usar</p>
+<p>git config --system http.sslverify false</p>
+<p>//clonar proyecto</p>
+<p>git clone https://github.com/jesusricardodam/prueba.git</p>
+<p>//git basics</p>
+<p>git status //ver el estado</p>
+<p>modificamos cosas</p>
+<p>git add * //añadimos todo lo modificado a pendiente de commitear</p>
+<p>git commit -m "mensaje"  //commiteamos lo anteriormente añadido</p>
+<p>//volver atras</p>
+<p>git commit --amend //desacemos la operacion</p>
 
 //añadir remote server
 git add remote (nombreAUsar) (server).
