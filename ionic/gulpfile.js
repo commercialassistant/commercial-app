@@ -1,51 +1,65 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var sh = require('shelljs');
+//imports
+var gulp = require('gulp'); //fichero principal gulp
+var gutil = require('gulp-util'); //algunas utilidades básicas de gulp
+var runSequence = require('run-sequence'); //permite ejecutar tareas de manera sincrona o asincrona a voluntad
+var babel = require('gulp-babel'); //pasa de js6 a js5 para compatibilidad con navegadores
+//end
 
-var paths = {
-  sass: ['./scss/**/*.scss']
-};
+//consts
+var JSPATH='src/**/*.js';
+var CSSPATH='src/**/*.css';
+var DEV_TASK=['babel'];
+//end
 
-gulp.task('default', ['sass']);
+//tasks
+gulp.task('default',['dev']);
+gulp.task('production',production);
+gulp.task('dev',dev);
+gulp.task('js6to5',js6to5);
+gulp.task('inject-js',injectJS);
+gulp.task('min-js',minJS);
+gulp.task('inject-css',injectCSS);
+gulp.task('min-css',minCSS);
+gulp.task('min-html',minHTML);
+gulp.task('init-server',initServer);
+gulp.task('refresh',refresh);
+//end
 
-gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
+//functions
+function dev(){
+  runSequence(
+    'js6to5' //first task
+  );
+}
+function production(){
+
+}
+function js6to5(){
+  return gulp.src(JSPATH)
+    .pipe(babel({
+      presets: ['es2015']
     }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
-});
+    .pipe(gulp.dest('wwwp/js/'));
+}
+function injectJS(){
 
-gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
-});
+}
+function minJS(){
 
-gulp.task('install', ['git-check'], function() {
-  return bower.commands.install()
-    .on('log', function(data) {
-      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-    });
-});
+}
+function injectCSS(){
 
-gulp.task('git-check', function(done) {
-  if (!sh.which('git')) {
-    console.log(
-      '  ' + gutil.colors.red('Git is not installed.'),
-      '\n  Git, the version control system, is required to download Ionic.',
-      '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
-      '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
-    );
-    process.exit(1);
-  }
-  done();
-});
+}
+function minCSS(){
+
+}
+function minHTML(){
+
+}
+function initServer(){
+
+}
+function refresh(){
+
+}
+//end
