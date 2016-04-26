@@ -10,8 +10,10 @@ CSS classes Names:
 
 Software version
 
-Ionic: 
-Node: 
+Ionic: 1.7
+Node: 5.8.>=
+git: 2.8
+tortoisegit: 2.1
 
 Struct Branchs:
 Developer1
