@@ -41,4 +41,4 @@ git pull remote rama
 <a hrf="https://www.atlassian.com/git/tutorials/what-is-version-control">https://www.atlassian.com/git/tutorials/what-is-version-control</a>
 
 
-gmail: commercialassistan.dam@gmail.com
+gmail: commercialassistant.dam@gmail.com
